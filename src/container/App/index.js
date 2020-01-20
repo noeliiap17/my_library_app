@@ -1,13 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Link from "../../component/Link";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <p>My react app</p>
+      <Link to="/about" className="App-link">
+        <p>About</p>
+      </Link>
     </div>
   );
-}
+};
 
 export default App;
