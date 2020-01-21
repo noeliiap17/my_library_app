@@ -2,10 +2,16 @@ import React from "react";
 import { connect } from "react-redux";
 import "./App.css";
 import Link from "../../component/Link";
+import { loadMovieList } from "../../../actions";
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.loadMovieList();
+  }
+
   render() {
-    const { users } = this.props;
+    const { movieList } = this.props;
+    console.log(movieList);
     return (
       <div className="App">
         <p>My react app</p>
@@ -13,8 +19,8 @@ class App extends React.Component {
           <p>About</p>
         </Link>
 
-        {users.map((user, key) => (
-          <p>{user.name}</p>
+        {movieList.map((movie, key) => (
+          <p>{movie.name}</p>
         ))}
       </div>
     );
@@ -22,10 +28,14 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  users: state.users
+  movieList: state.movies.movieList
+});
+
+export const mapDispatchToProps = dispatch => ({
+  loadMovieList: () => dispatch(loadMovieList())
 });
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(App);

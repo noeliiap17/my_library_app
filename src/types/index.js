@@ -1,0 +1,5 @@
+export default {
+  LOAD_MOVIES_REQUEST: "react/movies/LOAD_MOVIES_REQUEST",
+  LOAD_MOVIES_SUCCESS: "react/movies/LOAD_MOVIES_SUCCESS",
+  LOAD_MOVIES_FAILURE: "react/movies/LOAD_MOVIES_FAILURE"
+};
