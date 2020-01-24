@@ -1,47 +1,56 @@
-import axios from "axios";
 import { DataState } from "../constants";
-
-const LOAD_MOVIES_REQUEST = "forum/LOAD_MOVIES_REQUEST";
-const LOAD_MOVIES_SUCCESS = "forum/LOAD_MOVIES_SUCCESS";
-const LOAD_MOVIES_FAILURE = "forum/LOAD_MOVIES_FAILURE";
+import moviesTypes from "../types";
 
 const initialState = {
   movieList: [],
+  movieDetails: {},
   movieListState: DataState.LOADED,
+  movieDetailsState: DataState.LOADED,
   errorMessage: null
 };
 
 export default function reducer(state = initialState, action) {
   const { type, error, result } = action;
   switch (type) {
-    case LOAD_MOVIES_REQUEST:
+    case moviesTypes.LOAD_MOVIES_REQUEST:
       return {
         ...state,
         movieListState: DataState.LOADING,
         movieList: [],
         errorMessage: null
       };
-    case LOAD_MOVIES_SUCCESS:
+    case moviesTypes.LOAD_MOVIES_SUCCESS:
       return {
         ...state,
         movieListState: DataState.SUCCESS,
-        movieList: result.data.production_companies
+        movieList: result.data.results
       };
-    case LOAD_MOVIES_FAILURE:
+    case moviesTypes.LOAD_MOVIES_FAILURE:
       return {
         ...state,
         movieListState: DataState.FAIL,
         errorMessage: error.data
       };
+    case moviesTypes.LOAD_DETAILS_REQUEST:
+      return {
+        ...state,
+        movieDetailsState: DataState.LOADING,
+        movieDetails: [],
+        errorMessage: null
+      };
+    case moviesTypes.LOAD_DETAILS_SUCCESS:
+      return {
+        ...state,
+        movieDetailsState: DataState.SUCCESS,
+        movieDetails: result.data
+      };
+    case moviesTypes.LOAD_DETAILS_FAILURE:
+      return {
+        ...state,
+        movieDetailsState: DataState.FAIL,
+        errorMessage: error.data
+      };
     default:
       return state;
   }
-}
-
-export function loadMovieList() {
-  return axios({
-    method: "GET",
-    url:
-      "https://api.themoviedb.org/3/movie/550?api_key=2da5e8e85e936d8da0f8459be873037c"
-  });
 }

@@ -1,0 +1,37 @@
+.loader {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  -webkit-animation: typing 1s linear infinite alternate;
+  animation: typing 1s linear infinite alternate;
+  margin: 46px auto;
+}
+
+.loader--small {
+  margin: 12px auto;
+}
+
+.loader--fit {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 36px;
+}
+
+@keyframes typing {
+  0% {
+    background-color: #c7f5f5;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2),
+      24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px #c7f5f5,
+      24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2),
+      24px 0px 0px 0px #c7f5f5;
+  }
+}

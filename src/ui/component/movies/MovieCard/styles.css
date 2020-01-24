@@ -1,0 +1,30 @@
+.movieCard__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 1rem 0 1rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.image__container img {
+  height: 150px;
+}
+
+.data__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+  height: 150px;
+}
+.data__container span:first-of-type {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.data__container span:last-of-type {
+  margin-top: 1rem;
+}
