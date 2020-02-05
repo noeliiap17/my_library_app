@@ -1,9 +1,4 @@
-My-Notes:
 
-- Me hubiera gustado añadir un procesador CSS, tipo Sass o PostCSS.
-- Tenía pensado hacer la paginación de la lista de películas.
-- En Desktop, me hubiera gustado añadir un Grid para el listado y mostrar las películas de otra manera.
-- Me he centrado más en la parte de el flujo de datos, con redux y el state y con react-router que en maquetar, pero me hubiera gustado continuar con esta parte.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
