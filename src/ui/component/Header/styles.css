@@ -5,12 +5,12 @@ header.header {
   width: 100%;
   height: 80px;
   color: white;
-  background-color: #c7f5f5;
+  background-color: #ecbe13;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   transition: all 0.5s ease-out;
   z-index: 110;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -25,6 +25,6 @@ header.header {
   }
 }
 .header__logo img {
-  height: 50px;
+  height: 80px;
   display: block;
 }

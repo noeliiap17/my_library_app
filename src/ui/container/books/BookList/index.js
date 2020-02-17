@@ -1,20 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
-import MovieCard from "../../../component/movies/MovieCard";
-import { loadMovieList } from "../../../../actions";
+import BookCard from "../../../component/books/BookCard";
+import { loadBookList } from "../../../../actions";
 import "./styles.css";
 
 class MovieList extends React.Component {
   componentDidMount() {
-    this.props.loadMovieList();
+    this.props.loadBookList();
   }
 
   render() {
-    const { movieList = [] } = this.props;
+    const { bookList = [] } = this.props;
     return (
       <div className="container">
-        {movieList.map((movie, key) => (
-          <MovieCard movie={movie} />
+        {bookList.map((book, key) => (
+          <BookCard book={book} />
         ))}
       </div>
     );
@@ -22,11 +22,11 @@ class MovieList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  movieList: state.movies.movieList
+  bookList: state.books.bookList
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadMovieList: () => dispatch(loadMovieList())
+  loadBookList: () => dispatch(loadBookList())
 });
 
 export default connect(

@@ -1,16 +1,16 @@
-import moviesTypes from "../types";
-import moviesService from "../services";
+import booksTypes from "../types";
+import booksService from "../services";
 
-export function loadMovieList() {
+export function loadBookList() {
   const request = () => ({
-    type: moviesTypes.LOAD_MOVIES_REQUEST
+    type: booksTypes.LOAD_BOOKS_REQUEST
   });
   const success = result => ({
-    type: moviesTypes.LOAD_MOVIES_SUCCESS,
+    type: booksTypes.LOAD_BOOKS_SUCCESS,
     result
   });
   const failure = error => ({
-    type: moviesTypes.LOAD_MOVIES_FAILURE,
+    type: booksTypes.LOAD_BOOKS_FAILURE,
     error
   });
 
@@ -18,7 +18,7 @@ export function loadMovieList() {
     dispatch(request());
 
     try {
-      const result = await moviesService.loadMovieList();
+      const result = await booksService.loadBookList();
       dispatch(success(result));
     } catch (error) {
       dispatch(failure(error));
@@ -26,16 +26,16 @@ export function loadMovieList() {
   };
 }
 
-export function loadMovieDetail(movieId) {
+export function loadBookDetail(bookId) {
   const request = () => ({
-    type: moviesTypes.LOAD_DETAILS_REQUEST
+    type: booksTypes.LOAD_DETAILS_REQUEST
   });
   const success = result => ({
-    type: moviesTypes.LOAD_DETAILS_SUCCESS,
+    type: booksTypes.LOAD_DETAILS_SUCCESS,
     result
   });
   const failure = error => ({
-    type: moviesTypes.LOAD_DETAILS_FAILURE,
+    type: booksTypes.LOAD_DETAILS_FAILURE,
     error
   });
 
@@ -43,7 +43,7 @@ export function loadMovieDetail(movieId) {
     dispatch(request());
 
     try {
-      const result = await moviesService.loadMovieDetail(movieId);
+      const result = await booksService.loadBookDetail(bookId);
       dispatch(success(result));
     } catch (error) {
       dispatch(failure(error));

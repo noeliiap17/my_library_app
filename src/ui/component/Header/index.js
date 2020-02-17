@@ -7,7 +7,7 @@ const Header = () => (
     <div className="header__container">
       <Link to="/" className="header__logo">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Fox_Movies_%28Asia%29_logo.svg/1280px-Fox_Movies_%28Asia%29_logo.svg.png"
+          src="https://i.ya-webdesign.com/images/png-image-library-6.png"
           alt="Logo"
         />
       </Link>
